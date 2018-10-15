@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	#gal{
+		background:linear-gradient(to left,blue,green);
+	}
+	</style>
+</head>
+<body>
+<div id="gal">
+	<center>
+<button onclick="prev()" style="width:100px;height:40px;font-size:20px;">Next</button>
+<img id="slider" src="Pic1.jpg" width="500px"height="500px">
+<button onclick="next()"style="width:100px;height:40px;font-size:20px;" >Prev.</button>
+<br><p style="font-size:50px;color: white;">Gallery</p></center>
+</div>
+<script type="text/javascript"> 
+var images=[
+"Pic1.jpg","Pic2.jpg","Pic3.jpg","Pic4.jpg","Pic5.jpg","Pic6.jpg"
+,"Pic7.jpg","Pic8.jpg","Pic9.jpg","Pic11.jpg"
+];
+var num=0;
+function next(){
+var slider=document.getElementById("slider");
+num++;
+if(num>=images.length);{
+	num=0;
+}
+slider.src=images[num];
+}
+function prev(){
+	num--;
+	if(num<1){
+		num=images.length-1;
+	}
+	slider.src=images[num];
+}
+
+</script>
+</body>
+</html>
